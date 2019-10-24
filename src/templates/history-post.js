@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import { HTMLScript } from '../components/Script';
 
-export const BlogPostTemplate = ({ content, contentComponent, description, tags, title, helmet, script }) => {
+export const HistoryPostTemplate = ({ content, contentComponent, description, title, helmet }) => {
   const PostContent = contentComponent || Content;
 
   return (
@@ -19,27 +17,14 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
-      <HTMLScript content={script} holderId="blog-scripts" />
     </section>
   );
 };
 
-BlogPostTemplate.propTypes = {
+HistoryPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -47,39 +32,37 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object
 };
 
-const BlogPost = ({ data }) => {
+const HistoryPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <HistoryPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        script={post.frontmatter.script}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="%s | History">
             <title>{`${post.frontmatter.title}`}</title>
             <meta name="description" content={`${post.frontmatter.description}`} />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
   );
 };
 
-BlogPost.propTypes = {
+HistoryPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   })
 };
 
-export default BlogPost;
+export default HistoryPost;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query HistoryPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -87,8 +70,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
-        script
       }
     }
   }
