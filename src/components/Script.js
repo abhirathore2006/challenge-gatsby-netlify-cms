@@ -19,3 +19,8 @@ export class HTMLScript extends React.Component {
     return <div id={`script-holder-${this.props.holderId}`} />;
   }
 }
+
+HTMLScript.propTypes = {
+  content: PropTypes.string,
+  holderId: PropTypes.string
+};
