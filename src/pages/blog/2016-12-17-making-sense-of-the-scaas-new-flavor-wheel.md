@@ -14,6 +14,8 @@ script: |-
   <script>
       window.alert('The most dangerous drinking game is seeing how long I can go without coffee')
   </script>
+
+  <script src="/sample-js/sample.js" ></script>
 ---
 ![flavor wheel](/img/flavor_wheel.jpg)
 
