@@ -34,7 +34,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, tags,
           </div>
         </div>
       </div>
-      <HTMLScript content={script} holderId="blog-scripts" />
+      <HTMLScript content={script}/>
     </section>
   );
 };
