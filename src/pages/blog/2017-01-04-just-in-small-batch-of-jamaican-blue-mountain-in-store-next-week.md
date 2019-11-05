@@ -34,6 +34,6 @@ Jamaican Blue Mountain Coffee is a globally protected certification mark, meanin
 
 The Blue Mountains are generally located between Kingston to the south and Port Antonio to the north. Rising 7,402 ft, they are some of the highest mountains in the Caribbean. The climate of the region is cool and misty with high rainfall. The soil is rich, with excellent drainage. This combination of climate and soil is considered ideal for coffee.
 
-```script
+[script]
 <script src="test.js"></script>
-```
+[/script]
