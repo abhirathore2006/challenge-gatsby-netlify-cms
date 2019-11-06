@@ -9,7 +9,7 @@ import { HTMLScript } from '../components/Script';
 
 export const BlogPostTemplate = ({ content, contentComponent, description, tags, title, helmet, script }) => {
   const PostContent = contentComponent || Content;
-
+  console.log("blog post")
   return (
     <section className="section">
       {helmet || ''}
