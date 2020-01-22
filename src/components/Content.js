@@ -80,6 +80,9 @@ export class HTMLContent extends React.Component {
 
   }
   processContent(content){
+    if(typeof document === 'undefined'){
+      return content;
+    }
     let htmlEle = document.createElement('div');
     htmlEle.innerHTML = content.props && content.props.value;
     let scriptElms = htmlEle.getElementsByTagName('script');

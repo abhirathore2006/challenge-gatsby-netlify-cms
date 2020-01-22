@@ -21,6 +21,32 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Script', name: 'script', widget: 'text', required: false }
+      - {
+          label: 'Alpha Testing',
+          name: 'alpha',
+          widget: object,
+          fields:
+            [
+              { label: 'isLive', name: 'live', widget: 'boolean', required: false },
+              { label: 'weight(1-100)', name: 'weight', widget: 'number', required: false },
+              { label: 'Title', name: 'title', widget: 'string', required: false },
+              { label: 'Description', name: 'description', widget: 'text', required: false },
+              { label: 'Featured Image', name: 'featuredimage', widget: image, required: false }
+            ],
+        }
+      - {
+          label: 'Beta Testing',
+          name: 'beta',
+          widget: object,
+          fields:
+            [
+              { label: 'isLive', name: 'live', widget: 'boolean', required: false },
+              { label: 'weight(1-100)', name: 'weight', widget: 'number', required: false },
+              { label: 'Title', name: 'title', widget: 'string', required: false },
+              { label: 'Description', name: 'description', widget: 'text', required: false },
+              { label: 'Featured Image', name: 'featuredimage', widget: image, required: false }
+            ],
+        }
 
   - name: 'history'
     label: 'History'
