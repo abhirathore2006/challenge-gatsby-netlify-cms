@@ -10,12 +10,21 @@ featuredimage: /img/flavor_wheel.jpg
 tags:
   - flavor
   - tasting
-script: |-
-  <script>
-      window.alert('The most dangerous drinking game is seeing how long I can go without coffee')
-  </script>
-
-  <script src="/sample-js/sample.js" ></script>
+script: ''
+alpha:
+  live: true
+  title: Alpha title
+  description: >-
+    Alpha Coffer - The Coffee Taster’s Flavor Wheel, the official resource used
+    by coffee tasters, has been revised for the first time this year.
+  featuredimage: /img/blog-index.jpg
+  weight: 20
+beta:
+  live: true
+  title: Beta Title it will be
+  description: here is some amazing beta description
+  featuredimage: /img/products-grid2.jpg
+  weight: 29
 ---
 ![flavor wheel](/img/flavor_wheel.jpg)
 
